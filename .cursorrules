@@ -1,0 +1,146 @@
+You are an expert in Python, Julep SDK, SQLite, ChromaDB, Redis, and API integration. Follow these rules to build a modern, scalable, and maintainable Python application.
+
+## Project-Specific Guidelines
+1. Use type hints for all code; avoid `Any` and `Optional` unless strictly necessary.
+2. Use modular Python dataclasses or Pydantic models for data structures.
+3. Structure the project into these folders:
+   - `config/`: Configuration files (YAML, env)
+   - `models/`: Data models and schemas
+   - `services/`: Business logic and API integrations
+   - `storage/`: Database and cache storage
+   - `utils/`: Utility functions
+   - `tests/`: Unit and integration tests
+4. Implement proper environment variable handling with python-dotenv.
+5. Follow a modular, service-oriented architecture approach.
+6. Use SQLite for persistence, ChromaDB for vector storage, and Redis for caching.
+7. Always follow the rules and guidelines provided in all sections of this file.
+8. Do not adjust functionality outside of the requirements without explicit approval.
+
+## Code Style and Structure
+9. Follow PEP 8 style guide strictly.
+10. Use absolute imports and organize imports according to PEP 8.
+11. Prefer explicit function and variable names over abbreviations.
+12. Write clear docstrings following Google style format.
+13. Use meaningful variable and function names (e.g., `is_loading`, `has_error`).
+14. Format code with Black and follow Flake8/Pylint rules.
+15. Maintain clean, readable code with logical spacing and line breaks.
+
+## Julep Integration Guidelines
+16. Use the Julep client singleton pattern for all API interactions.
+17. Implement proper error handling for API calls.
+18. Use YAML for configuration files:
+    - Agent configurations
+    - Task definitions
+    - Memory settings
+19. Follow Julep SDK best practices:
+    - Never expose API keys in code
+    - Use environment variables for configuration
+    - Implement proper error handling
+    - Validate API responses
+20. Optimize API usage:
+    - Implement proper retry mechanisms
+    - Handle rate limiting
+    - Cache responses when appropriate
+    - Use async operations when available
+
+## Authentication Guidelines
+21. Implement secure API key management:
+    - Use environment variables
+    - Implement key rotation
+    - Add rate limiting protection
+22. Secure configuration:
+    - Protect sensitive configuration
+    - Handle API errors gracefully
+    - Show appropriate error messages
+23. Clear sensitive data and handle token management securely.
+
+## Database Guidelines
+24. Use SQLite effectively:
+    - Create proper indexes
+    - Use appropriate data types
+    - Implement connection pooling
+    - Handle concurrent access
+25. Follow schema best practices:
+    - Use migrations for schema changes
+    - Add proper constraints
+    - Document schema changes
+26. Optimize queries:
+    - Use proper indexes
+    - Implement efficient joins
+    - Cache frequent queries
+
+## ChromaDB Guidelines
+27. Implement proper collection management:
+    - Use meaningful collection names
+    - Handle embeddings efficiently
+    - Implement proper error handling
+28. Optimize vector operations:
+    - Monitor memory usage
+    - Implement batch operations
+    - Use appropriate distance metrics
+
+## Redis Guidelines
+29. Implement efficient caching:
+    - Set appropriate TTLs
+    - Use proper data structures
+    - Handle cache invalidation
+30. Optimize Redis usage:
+    - Monitor memory usage
+    - Implement proper error handling
+    - Use appropriate serialization
+
+## Type Hints and Documentation
+31. Use type hints consistently throughout the codebase.
+32. Document complex type definitions in separate type stub files.
+33. Use Protocol classes for duck typing when appropriate.
+34. Implement proper Generic types for reusable components.
+
+## Error Handling
+35. Use custom exception classes for different error types.
+36. Implement proper logging with different levels.
+37. Handle API errors gracefully with retries when appropriate.
+38. Use context managers for resource cleanup.
+
+## Testing Guidelines
+39. Write unit tests for all business logic.
+40. Implement integration tests for API interactions.
+41. Use pytest fixtures for common setup.
+42. Mock external services in tests.
+
+## Performance Optimization
+43. Use profiling tools to identify bottlenecks.
+44. Implement caching strategies where appropriate.
+45. Use async/await for I/O-bound operations.
+46. Implement proper connection pooling.
+
+## Configuration Management
+47. Use YAML for configuration files.
+48. Implement environment-specific configurations.
+49. Use proper type checking for configuration values.
+50. Validate configuration at startup.
+
+## Logging and Monitoring
+51. Implement structured logging.
+52. Use proper log levels for different environments.
+53. Add request ID tracking for API calls.
+54. Implement proper error tracking.
+
+## Security
+55. Validate all input data.
+56. Implement proper rate limiting.
+57. Use secure random number generation.
+58. Handle sensitive data properly.
+
+## Debugging and Error Resolution
+59. Use Python's debugging tools effectively.
+60. Add clear error messages with context.
+61. Implement proper stack trace handling.
+62. IMPORTANT: After resolving errors, run pytest to validate fixes.
+63. Confirm that error fixes do not introduce regressions.
+
+## Documentation and Comments
+64. Keep README.md focused on project setup and features.
+65. Use docstrings for all public functions and classes.
+66. Document configuration options and environment variables.
+67. Add inline comments for complex logic.
+68. Maintain up-to-date API documentation.

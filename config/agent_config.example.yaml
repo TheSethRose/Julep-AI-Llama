@@ -1,0 +1,37 @@
+name: "YourAgentName"
+description: "Description of your agent"
+model:
+  provider: "openai"
+  name: "gpt-4o-mini"
+  settings:
+    api_base: "https://api.openai.com"
+    max_tokens: 4096
+    temperature: 0.7
+    top_p: 0.95
+memory:
+  type: "persistent"
+  storage:
+    provider: "julep"
+    backend: "sqlite"
+    vector_store: "chroma"
+    cache: "redis"
+  settings:
+    context_window: 4096
+    max_tokens: 8192
+    retention_period: "30d"
+    embedding_model: "all-MiniLM-L6-v2"
+    chunk_size: 512
+    chunk_overlap: 50
+session:
+  type: "persistent"
+  storage: "redis"
+  settings:
+    ttl: 86400  # 24 hours
+    max_sessions_per_user: 10
+    context_strategy: "sliding_window"
+tools:
+  enabled: true
+  default_tools:
+    - "web_search"
+    - "document_search"
+    - "calculator"

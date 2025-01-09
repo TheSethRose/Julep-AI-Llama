@@ -1,0 +1,22 @@
+vector_store:
+  provider: "chroma"
+  settings:
+    collection_name: "julep_memories"
+    persist_directory: "/workspaces/julep/storage/chromadb"
+    embedding_function: "all-MiniLM-L6-v2"
+
+persistent_storage:
+  provider: "sqlite"
+  settings:
+    database_path: "/workspaces/julep/storage/julep.db"
+    tables:
+      conversations: "conversations"
+      messages: "messages"
+      metadata: "conversation_metadata"
+
+cache:
+  provider: "redis"
+  settings:
+    ttl:
+      session: 86400
+      context: 3600
